@@ -1,0 +1,20 @@
+.container {
+    position: fixed;
+    /* margin-top: 2vmin; */
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+}
+
+.myclass {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.mybutton {
+    position: fixed;
+    z-index: 3;
+}
