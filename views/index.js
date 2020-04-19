@@ -36,6 +36,8 @@ function generateChart(data, type) {
             };
             seriesList.push(item);
         }
+        console.log(geoList)
+        console.log(seriesList)
 
         option = {
             tooltip: {
@@ -123,6 +125,9 @@ function generateChart(data, type) {
                 }
             }
         }
+        console.log(geoList)
+        console.log(seriesList)
+
         option = {
             tooltip: {
                 trigger: 'axis',
@@ -195,6 +200,9 @@ function generateChart(data, type) {
             }
         });
 
+        console.log(dataList)
+        console.log(seriesList)
+
         setTimeout(function () {
             option = {
                 legend: { icon: 'pin' },
@@ -232,6 +240,82 @@ function generateChart(data, type) {
             myChart.setOption(option);
         });
     }
+
+    if (type == 'map') {
+
+        let geoList = [], seriesList = [];
+        for (let i = 0; i < data.length; i++) {
+            geoList.push(data[i].geo);
+            let item = {
+                name: data[i].geo,
+                value: data[i].values
+            };
+            seriesList.push(item);
+        }
+
+        $(function () {
+
+            myChart.showLoading();
+
+            $.get('EU.json', function (geoJson) {
+
+                myChart.hideLoading();
+
+                echarts.registerMap('EU', geoJson);
+
+                myChart.setOption(option = {
+                    title: {
+                        text: 'The European Union Countries',
+                        subtext: 'Data from: Eurostats',
+                        sublink: 'https://ec.europa.eu/eurostat/tgm/graph.do?tab=graph&plugin=1&pcode=tesem160&language=en&toolbox=sort'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: '{b}<br/>{c} (p / km2)'
+                    },
+                    toolbox: {
+                        show: true,
+                        orient: 'vertical',
+                        left: 'right',
+                        top: 'center',
+                        feature: {
+                            dataView: {readOnly: false},
+                            restore: {},
+                            saveAsImage: {}
+                        }
+                    },
+                    visualMap: {
+                        min: 0,
+                        max: 50000,
+                        text: ['High', 'Low'],
+                        realtime: false,
+                        calculable: true,
+                        inRange: {
+                            color: ['lightskyblue', 'yellow', 'orangered']
+                        }
+                    },
+                    series: [
+                        {
+                            name: 'EU Countries',
+                            type: 'map',
+                            roam: true,
+                            mapType: 'EU',
+                            label: {
+                                show: true
+                            },
+                            data: seriesList,
+                            nameMap: {
+                                'Germany': 'Germany (until 1990 former territory of the FRG)'
+                            }
+                        }
+                    ]
+                });
+            });
+
+        });
+
+    }
+    
 }
 
 window.onresize = function () {
