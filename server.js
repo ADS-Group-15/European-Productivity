@@ -14,6 +14,11 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.get('/editor', (req, res) => {
+  res.render('new');
+});
+
+
 app.post('/api', jsonParser, async (req, res) => {
   let result = [];
   await getResult(req, function (data) {

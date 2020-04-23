@@ -19,3 +19,13 @@ node writeDataToDatabase.js
 ```
 nodemon .\server.js
 ```
+
+
+## Access editor through 127.0.0.1:5000/editor 
+
+### Get HTML code from editor content
+In browser console
+
+```
+editor.getData()
+```
