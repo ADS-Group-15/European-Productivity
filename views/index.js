@@ -241,6 +241,87 @@ function generateChart(data, type) {
         });
     }
 
+    if (type == 'bar3D') {
+        let geoList = [], seriesList = [], yearList = [], dataList = [];
+        for (let i = 0; i < data.length; i++) {
+            geoList.push(data[i].geo);
+            if (i == 0) {
+                for (let j = 0; j < data[0].years.length; j++) {
+                    yearList.push(data[i].years[j]);
+                }
+            }
+            for (let j = 0; j < data[0].years.length; j++) {
+                    dataList.push([j, i, data[i].values[j]]);
+            }
+        }
+        option = {
+            tooltip: {},
+            visualMap: {
+                max: 40000,
+                inRange: {
+                    color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
+                }
+            },
+            xAxis3D: {
+                type: 'category',
+                data: geoList
+            },
+            yAxis3D: {
+                type: 'category',
+                data: yearList
+            },
+            zAxis3D: {
+                type: 'value'
+            },
+            grid3D: {
+                boxWidth: 20,
+                boxDepth: 20,
+                viewControl: {
+                    // projection: 'orthographic'
+                },
+                light: {
+                    main: {
+                        intensity: 1.2,
+                        //shadow: true
+                        shadow: false
+                    },
+                    ambient: {
+                        intensity: 0.3
+                    }
+                }
+            },
+            series: [{
+                type: 'bar3D',
+                data: dataList.map(function (item) {
+                    return {
+                        value: [item[1], item[0], item[2]],
+                    }
+                }),
+                shading: 'lambert',
+
+                label: {
+                    textStyle: {
+                        fontSize: 16,
+                        borderWidth: 1
+                    }
+                },
+
+                emphasis: {
+                    label: {
+                        textStyle: {
+                            fontSize: 20,
+                            color: '#900'
+                        }
+                    },
+                    itemStyle: {
+                        color: '#900'
+                    }
+                }
+            }]
+        };
+        myChart.setOption(option);
+    }
+
     if (type == 'map') {
 
         let geoList = [], seriesList = [];
