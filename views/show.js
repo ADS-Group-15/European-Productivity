@@ -5,50 +5,58 @@ let myEditor_2
 BalloonEditor
     .create(document.querySelector('.editor_1'), {
         toolbar: {
-            items: ['heading',
-                '|',
-                'bold',
-                'italic',
-                'link',
-                'bulletedList',
-                'numberedList',
-                'alignment',
-                '|',
-                'indent',
-                'outdent',
-                '|',
-                'horizontalLine',
-                'imageUpload',
-                'blockQuote',
-                'code',
-                'codeBlock',
-                '|',
-                'fontFamily',
-                'fontSize',
-                'fontColor',
-                'fontBackgroundColor',
-                'removeFormat',
-                '|',
-                'insertTable',
-                'highlight',
-                'MathType',
-                'ChemType',
-                '|',
-                'undo',
-                'redo'
+            items: [
+                // 'heading',
+                // '|',
+                // 'bold',
+                // 'italic',
+                // 'link',
+                // 'bulletedList',
+                // 'numberedList',
+                // 'alignment',
+                // '|',
+                // 'indent',
+                // 'outdent',
+                // '|',
+                // 'horizontalLine',
+                // 'imageUpload',
+                // 'blockQuote',
+                // 'code',
+                // 'codeBlock',
+                // '|',
+                // 'fontFamily',
+                // 'fontSize',
+                // 'fontColor',
+                // 'fontBackgroundColor',
+                // 'removeFormat',
+                // '|',
+                // 'insertTable',
+                // 'highlight',
+                // 'MathType',
+                // 'ChemType',
+                // '|',
+                // 'undo',
+                // 'redo'
             ]
         },
         language: 'en',
         image: {
             toolbar: [
+                // 'imageTextAlternative',
+                // 'imageStyle:full',
+                // 'imageStyle:side'
             ]
         },
         table: {
             contentToolbar: [
+                // 'tableColumn',
+                // 'tableRow',
+                // 'mergeTableCells',
+                // 'tableCellProperties',
+                // 'tableProperties'
             ]
         },
         licenseKey: '',
-
     })
     .then(editor => {
         myEditor_1 = editor
@@ -65,50 +73,58 @@ BalloonEditor
 BalloonEditor
     .create(document.querySelector('.editor_2'), {
         toolbar: {
-            items: ['heading',
-                '|',
-                'bold',
-                'italic',
-                'link',
-                'bulletedList',
-                'numberedList',
-                'alignment',
-                '|',
-                'indent',
-                'outdent',
-                '|',
-                'horizontalLine',
-                'imageUpload',
-                'blockQuote',
-                'code',
-                'codeBlock',
-                '|',
-                'fontFamily',
-                'fontSize',
-                'fontColor',
-                'fontBackgroundColor',
-                'removeFormat',
-                '|',
-                'insertTable',
-                'highlight',
-                'MathType',
-                'ChemType',
-                '|',
-                'undo',
-                'redo'
+            items: [
+                // 'heading',
+                // '|',
+                // 'bold',
+                // 'italic',
+                // 'link',
+                // 'bulletedList',
+                // 'numberedList',
+                // 'alignment',
+                // '|',
+                // 'indent',
+                // 'outdent',
+                // '|',
+                // 'horizontalLine',
+                // 'imageUpload',
+                // 'blockQuote',
+                // 'code',
+                // 'codeBlock',
+                // '|',
+                // 'fontFamily',
+                // 'fontSize',
+                // 'fontColor',
+                // 'fontBackgroundColor',
+                // 'removeFormat',
+                // '|',
+                // 'insertTable',
+                // 'highlight',
+                // 'MathType',
+                // 'ChemType',
+                // '|',
+                // 'undo',
+                // 'redo'
             ]
         },
         language: 'en',
         image: {
             toolbar: [
+                // 'imageTextAlternative',
+                // 'imageStyle:full',
+                // 'imageStyle:side'
             ]
         },
         table: {
             contentToolbar: [
+                // 'tableColumn',
+                // 'tableRow',
+                // 'mergeTableCells',
+                // 'tableCellProperties',
+                // 'tableProperties'
             ]
         },
         licenseKey: '',
-
     })
     .then(editor => {
         myEditor_2 = editor

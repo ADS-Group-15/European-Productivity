@@ -36,8 +36,6 @@ function generateChart(data, type) {
             };
             seriesList.push(item);
         }
-        console.log(geoList)
-        console.log(seriesList)
 
         option = {
             tooltip: {
@@ -125,8 +123,6 @@ function generateChart(data, type) {
                 }
             }
         }
-        console.log(geoList)
-        console.log(seriesList)
 
         option = {
             tooltip: {
@@ -199,9 +195,6 @@ function generateChart(data, type) {
                 tooltip: '2012'
             }
         });
-
-        console.log(dataList)
-        console.log(seriesList)
 
         setTimeout(function () {
             option = {
