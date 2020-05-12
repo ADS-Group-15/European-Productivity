@@ -9,10 +9,11 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"
-        defer="defer"></script>
+    
+    <script src="echarts.min.js" defer="defer"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" 
+    integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"
+    defer="defer"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"
         defer="defer"></script>
@@ -21,6 +22,7 @@
         defer="defer"></script>
 
     <script src="ckeditor.js" defer="defer"></script>
+    <script src="https://www.echartsjs.com/zh/dist/echarts-gl.js" defer="defer"></script>
     <script src="show.js" defer="defer"></script>
     <title>Read Article</title>
 </head>
@@ -33,6 +35,25 @@
             <div class="card-body">
                 <div class="row row-editor justify-content-center">
                     <div class="editor_1"></div>
+                </div>
+                <div class="row">
+                    <div class="col" id="myCol1">
+                        <div id="main1" class="myclass"></div>
+                    </div>
+                    <div class="col">
+                        <div id="main2" class="myclass"></div>
+                    </div>
+                    <div class="col">
+                        <div id="main3" class="myclass"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col" id="myCol2">
+                        <div id="main4" class="myclass"></div>
+                    </div>
+                    <div class="col">
+                        <div id="main5" class="myclass"></div>
+                    </div>
                 </div>
                 <div class="row row-editor justify-content-center">
                     <div class="editor_2"></div>

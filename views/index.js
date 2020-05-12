@@ -469,6 +469,6 @@ function rerange(rawResult, type) {
             rerangedResult.push(item);
         }
     }
-
+    console.log(rawResult)
     generateChart(rerangedResult, type);
 }
