@@ -345,7 +345,7 @@ function generateChart(data, type) {
                     },
                     tooltip: {
                         trigger: 'item',
-                        formatter: '{b}<br/>{c} (p / km2)'
+                        formatter: '{b}<br/>{c}'
                     },
                     toolbox: {
                         show: true,
